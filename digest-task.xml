@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>DeepSeek 记忆整理：每天 23:40 归类 LOG 里的 [事实] 句；错过（关机）则下次登录 5 分钟后补跑。本地 Ollama，不联网。</Description>
+  </RegistrationInfo>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2026-11-16T23:40:00</StartBoundary>
+      <Enabled>true</Enabled>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+    <LogonTrigger>
+      <Enabled>true</Enabled>
+      <UserId>__USER__</UserId>
+      <Delay>PT5M</Delay>
+    </LogonTrigger>
+  </Triggers>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <WakeToRun>false</WakeToRun>
+    <ExecutionTimeLimit>PT20M</ExecutionTimeLimit>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>__CMD__</Command>
+      <WorkingDirectory>__DIR__</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

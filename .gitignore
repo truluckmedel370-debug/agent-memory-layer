@@ -1,0 +1,15 @@
+# 记忆数据本身不进仓库（里面是私人事实）
+MEMORY.md
+PENDING.md
+LOG.md
+INBOX.md
+ARCHIVE.md
+.digest-state.json
+digest.log
+
+# 本地环境
+*.bak-*
+*.local.ps1
+.vscode/
+.DS_Store
+Thumbs.db
